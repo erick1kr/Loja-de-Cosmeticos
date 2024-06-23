@@ -1,0 +1,20 @@
+.form-container {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 50px;
+}
+
+body {
+  background-image: url("foto_fundo.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  @media (max-width: 768px) {
+    body {
+      background-attachment: scroll; /* Faz a imagem de fundo rolar com o conteúdo */
+    }
+  }
+}
