@@ -4,131 +4,59 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
+    <!-- Incluindo o CSS do Bootstrap -->
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <!-- Incluindo o arquivo de estilo externo -->
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <div class="container mt-5">
-      <div class="form-container">
-        <h1>Login</h1>
-        <form id="login-form" novalidate>
-          <div class="form-group">
-            <label for="email" class="form-label">E-mail:</label>
-            <input
-              type="email"
-              id="email"
-              class="form-control form-input"
-              name="email"
-              required
-            />
-            <span class="error-message" id="email-error"></span>
-          </div>
-          <div class="form-group">
-            <label for="password" class="form-label">Senha:</label>
-            <input
-              type="password"
-              id="password"
-              class="form-control form-input"
-              name="password"
-              required
-            />
-            <span class="error-message" id="password-error"></span>
-          </div>
-          <button type="submit" class="btn btn-primary">Entrar</button>
-        </form>
-        <div id="login-message" class="mt-4"></div>
-      </div>
+    <div
+      class="container mt-5"
+      style="
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <h1>Login</h1>
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="email" class="form-label">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control form-input"
+            name="email"
+            required
+          />
+          <span class="error-message" id="email-error"></span>
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-label">Senha:</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control form-input"
+            name="password"
+            required
+          />
+          <span class="error-message" id="password-error"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+
+      <!-- Div para exibir a mensagem de sucesso ou erro -->
+      <div id="message" class="mt-4"></div>
     </div>
 
+    <!-- Incluindo o JavaScript do Bootstrap e dependências -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script>
-      $(document).ready(function () {
-        function validateEmail(email) {
-          const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          return regex.test(email);
-        }
-
-        function validatePassword(password) {
-          const regex = /^[a-zA-Z0-9!@#$%^&*]{6,}$/;
-          return regex.test(password);
-        }
-
-        $("#login-form").on("submit", function (event) {
-          event.preventDefault();
-
-          const emailInput = $("#email");
-          const email = emailInput.val().trim();
-          const emailError = $("#email-error");
-
-          if (!validateEmail(email)) {
-            emailError.text("Por favor, insira um endereço de e-mail válido.");
-            emailError.show();
-            emailInput.focus();
-            return;
-          } else {
-            emailError.text("");
-            emailError.hide();
-          }
-
-          const passwordInput = $("#password");
-          const password = passwordInput.val().trim();
-          const passwordError = $("#password-error");
-
-          if (!validatePassword(password)) {
-            passwordError.text("A senha deve ter no mínimo 6 caracteres.");
-            passwordError.show();
-            passwordInput.focus();
-            return;
-          } else {
-            passwordError.text("");
-            passwordError.hide();
-          }
-
-          const loginData = { email, password };
-
-          $.ajax({
-            url: "http://localhost:3000/login",
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify(loginData),
-            success: function (response) {
-              if (response.authenticated) {
-                $("#login-message")
-                  .hide()
-                  .html(
-                    '<div class="alert alert-success">Login bem-sucedido! Redirecionando...</div>'
-                  )
-                  .fadeIn(1000);
-
-                setTimeout(function () {
-                  window.location.href = "principal.html";
-                }, 2000);
-              } else {
-                $("#login-message")
-                  .hide()
-                  .html(
-                    '<div class="alert alert-danger">E-mail ou senha incorretos. Por favor, tente novamente.</div>'
-                  )
-                  .fadeIn(1000);
-              }
-            },
-            error: function () {
-              $("#login-message")
-                .hide()
-                .html(
-                  '<div class="alert alert-danger">Erro ao enviar os dados. Por favor, tente novamente.</div>'
-                )
-                .fadeIn(1000);
-            },
-          });
-        });
-      });
-    </script>
+    <script src="login.js"></script>
   </body>
 </html>

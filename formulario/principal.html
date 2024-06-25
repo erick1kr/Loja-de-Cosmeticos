@@ -1,26 +1,207 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página Principal</title>
-    <!-- Incluindo o CSS do Bootstrap -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Incluindo o arquivo de estilo externo -->
-    <link rel="stylesheet" href="css.css" />
-  </head>
-  <body>
-    <div class="container mt-5">
-      <h1>Bem-vindo à Página Principal</h1>
-      <p>Você está logado com sucesso!</p>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Cosméticos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="principal.css">
+</head>
+<body>
 
-    <!-- Incluindo o JavaScript do Bootstrap e dependências -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+<!-- Navbar fixa -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">
+        <img src="logo.jpeg" width="150" height="90" class="d-inline-block align-top" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Início</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Produtos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contato</a>
+            </li>
+        </ul>
+        <form id="search-form" class="form-inline my-2 my-lg-0">
+            <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+            <button id="search-button" class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        </form>
+    </div>
+</nav>
+
+<!-- Seu conteúdo principal aqui -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="principal.js"></script>
+</body>
+</html>
+    <div class="container mt-5 pt-5">
+        <h1 class="mt-4">Produtos</h1>
+        <div class="row">
+            <!-- Produto 1 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="shampoo.jpg" class="card-img-top" alt="Shampoo">
+                    <div class="card-body">
+                        <h5 class="card-title">Shampoo Hidratante</h5>
+                        <p class="card-text">Shampoo para todos os tipos de cabelo. Preço: R$ 50</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="condicionador.jpg" class="card-img-top" alt="Condicionador">
+                    <div class="card-body">
+                        <h5 class="card-title">Condicionador Nutritivo</h5>
+                        <p class="card-text">Condicionador para cabelos secos. Preço: R$ 60</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 3 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="progressiva.jpg" class="card-img-top" alt="Progressiva">
+                    <div class="card-body">
+                        <h5 class="card-title">Progressiva Sem Formol</h5>
+                        <p class="card-text">Tratamento capilar progressivo. Preço: R$ 200</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 4 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="espuma.jpg" class="card-img-top" alt="Espuma de Barbear">
+                    <div class="card-body">
+                        <h5 class="card-title">Espuma de Barbear Refrescante</h5>
+                        <p class="card-text">Espuma de barbear com efeito refrescante. Preço: R$ 40</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 5 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="shampoo2.jpg" class="card-img-top" alt="Shampoo">
+                    <div class="card-body">
+                        <h5 class="card-title">Shampoo Anti-queda</h5>
+                        <p class="card-text">Shampoo fortalecedor. Preço: R$ 70</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 6 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="condicionador2.jpg" class="card-img-top" alt="Condicionador">
+                    <div class="card-body">
+                        <h5 class="card-title">Condicionador Reparador</h5>
+                        <p class="card-text">Condicionador para cabelos danificados. Preço: R$ 80</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 7 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="progressiva2.jpg" class="card-img-top" alt="Progressiva">
+                    <div class="card-body">
+                        <h5 class="card-title">Progressiva Marroquina</h5>
+                        <p class="card-text">Tratamento capilar com argan. Preço: R$ 250</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 8 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="espuma2.jpg" class="card-img-top" alt="Espuma de Barbear">
+                    <div class="card-body">
+                        <h5 class="card-title">Espuma de Barbear Hidratante</h5>
+                        <p class="card-text">Espuma de barbear com aloe vera. Preço: R$ 45</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 9 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="shampoo3.jpg" class="card-img-top" alt="Shampoo">
+                    <div class="card-body">
+                        <h5 class="card-title">Shampoo Volumizador</h5>
+                        <p class="card-text">Shampoo para dar volume. Preço: R$ 90</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 10 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="condicionador3.jpg" class="card-img-top" alt="Condicionador">
+                    <div class="card-body">
+                        <h5 class="card-title">Condicionador Liso</h5>
+                        <p class="card-text">Condicionador para cabelos lisos. Preço: R$ 100</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 11 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="progressiva3.jpg" class="card-img-top" alt="Progressiva">
+                    <div class="card-body">
+                        <h5 class="card-title">Progressiva de Chocolate</h5>
+                        <p class="card-text">Tratamento capilar de chocolate. Preço: R$ 230</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Produto 12 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <img src="espuma3.jpg" class="card-img-top" alt="Espuma de Barbear">
+                    <div class="card-body">
+                        <h5 class="card-title">Espuma de Barbear Calmante</h5>
+                        <p class="card-text">Espuma de barbear para peles sensíveis. Preço: R$ 50</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-light text-center mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Status Cosméticos</h5>
+                    <p>Oferecemos os melhores produtos de cuidados pessoais para você.</p>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Links Úteis</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="#" class="text-dark">Início</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-dark">Produtos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-dark">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Contato</h5>
+                    <p>Email: contato@statuscosmeticos.com</p>
+                    <p>Telefone: (11) 1234-5678</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Status Cosméticos. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
 </html>
