@@ -14,7 +14,7 @@ body {
 
   @media (max-width: 768px) {
     body {
-      background-attachment: scroll; /* Faz a imagem de fundo rolar com o conteúdo */
+      background-attachment: scroll;
     }
   }
 }

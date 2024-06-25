@@ -1,14 +1,10 @@
 $(document).ready(function () {
   $("#login-form").on("submit", function (event) {
-    // Evitando o envio do formulário e a recarga da página
     event.preventDefault();
-
-    // Obtendo os dados do formulário
     const email = $("#email").val().trim();
     const password = $("#password").val().trim();
     console.log("Login form data:", { email, password });
 
-    // Verificando os dados via AJAX com o servidor JSON
     $.ajax({
       url: "http://localhost:3000/userData",
       type: "GET",
@@ -19,7 +15,6 @@ $(document).ready(function () {
         );
 
         if (user) {
-          // Login bem-sucedido
           $("#message")
             .hide()
             .html(
@@ -27,12 +22,10 @@ $(document).ready(function () {
             )
             .fadeIn(1000);
 
-          // Redirecionando para a página principal após 2 segundos
           setTimeout(function () {
             window.location.href = "principal.html";
           }, 2000);
         } else {
-          // Credenciais inválidas
           $("#message")
             .hide()
             .html(
@@ -43,7 +36,6 @@ $(document).ready(function () {
       },
       error: function (jqXHR, textStatus, errorThrown) {
         console.error("Server error:", textStatus, errorThrown);
-        // Exibindo mensagem de erro
         $("#message")
           .hide()
           .html(
